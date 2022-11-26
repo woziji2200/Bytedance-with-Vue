@@ -8,16 +8,32 @@
         <button>了解更多</button>
         <button>查看职位</button>
     </div>
+    <div class="black"></div>
     <img :src="location.img" alt="">
 
 </div>
 </template>
 <style scoped>
+.black{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    opacity: 0.3;
+    z-index: 0;
+}
 .l1{
     width:473px;
     height: 282px;
     position: relative;
     overflow: hidden;
+    margin-top: 40px;
+    border-radius: 20px;
+    
+    /* margin-bottom: 40px; */
+}
+.l1:hover .black{
+    display: block;
 }
 .l1 img{
     width:100%;
@@ -35,6 +51,7 @@
     position: absolute;
     bottom: 20px;
     left: 20px;
+    z-index: 1;
 }
 button{
     width: 80px;

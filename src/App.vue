@@ -1,4 +1,7 @@
 <template>
+
+<button class="up" @click="pageup()" v-show="up"><svg class="" viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><defs></defs><path d="M469.376 240.448v676.864c0 11.776 9.6 21.376 21.312 21.376h42.688c11.776 0 21.312-9.6 21.312-21.376v-677.76l304.896 304.96c8.32 8.32 21.824 8.32 30.144 0l30.208-30.208a21.312 21.312 0 0 0 0-30.144L527.744 91.968a21.312 21.312 0 0 0-24.704-4.032 21.312 21.312 0 0 0-6.144 4.288L104.704 484.48a21.312 21.312 0 0 0 0 30.144l30.144 30.144c8.32 8.32 21.888 8.32 30.208 0l304.32-304.32z"></path></svg></button>
+
     <nav :style="alpha" ref="nav1">
         <svg v-show="logo1" width="197" height="35" class="nav-logo">
             <defs>
@@ -265,7 +268,7 @@
             <div class="footer-3-logos">
                 <div class="footer-3-1">
                     <div v-show="qrcode[0]" class="footer-3-qrcode footer-3-qrcode-1">
-                        123
+                        <img src="@/assets/QR1.png" alt="" class="footer-3-img">
                     </div>
                     <svg @mouseover="qrcode[0]=true" @mouseleave="qrcode[0]=false" width="33" height="32" class="footer-3-logo1">
                         <defs>
@@ -357,6 +360,7 @@ export default {
             alpha: "background-color:rgba(255,255,255,0)",
             oldScrollTop: 0,
             qrcode:[false,false,false],
+            up:false,
         }
     },
     mounted() {
@@ -368,6 +372,9 @@ export default {
         }
     },
     methods: {
+        pageup(){
+            document.documentElement.scrollTo(0,0);
+        },
         scroing() {
             if (document.documentElement.scrollTop <= window.innerHeight - 32 && this.page == 1) {
                 this.logo1 = true;
@@ -377,6 +384,7 @@ export default {
                 this.listHover = "a1";
                 this.a3 = "a3"
                 this.alpha = "background-color:rgba(255,255,255,0)"
+                this.up=false
             } else {
                 this.logo1 = false;
                 this.logo2 = true;
@@ -385,6 +393,7 @@ export default {
                 this.listHover = "a2";
                 this.a3 = "a4"
                 this.alpha = "background-color:rgba(255,255,255,0.8);backdrop-filter:blur(6px)";
+                this.up=true
             }
             let scrollTop = document.documentElement.scrollTop
             let scrollStep = scrollTop - this.oldScrollTop;

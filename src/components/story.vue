@@ -3,13 +3,13 @@
     <div class="story-img">
         <img :src="msg.img" alt="">
     </div>
-    <p class="story-title">{{msg.title}}</p>
-    <div class="story-name">
+    <p class="story-title"  data-aos="fade-up" data-aos-duration="800">{{msg.title}}</p>
+    <div class="story-name"  data-aos="fade-up" data-aos-duration="800">
         {{msg.name}}
         <span></span>
         {{msg.position}}
     </div>
-    <p class="story-detail">
+    <p class="story-detail"  data-aos="fade-up" data-aos-duration="800">
         {{msg.detail}}
     </p>
     <button>

@@ -31,7 +31,7 @@
     transform: scale(1.2);
 }
 .work2:hover .img1{
-    box-shadow:0px 0px 20px rgba(1, 1, 1, 0.7);
+    box-shadow:0px 0px 25px rgba(1, 1, 1, 0.4);
 }
 .img1-black{
     width: 100%;

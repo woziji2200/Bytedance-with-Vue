@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="banner-video">
-        <video muted loop src="@/assets/gongquhunjian_1080.min.mp4"></video>
+        <video muted autoplay loop src="@/assets/gongquhunjian_1080.min.mp4"></video>
     </div>
 </div>
 
@@ -194,6 +194,7 @@ export default {
     name: "home",
     created(){
         AOS.init({once:true,offset:60});
+        document.title="加入字节跳动";
     },
     methods:{
         pageDown(){

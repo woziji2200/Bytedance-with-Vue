@@ -1,10 +1,12 @@
 <template>
     <div style="height: 64px;"></div>
-    <div class="banner">
+    <div class="banner2">
         <h1>我们在多个城市设有办公室</h1>
     </div>
     <div class="location">
         <locations v-for="location in locations" :location="location"></locations>
+        <button class="button1">查看更多城市在招职位</button>
+
     </div>
 </template>
 
